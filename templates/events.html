@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Reverse Geocoding</title>
+    <title>Event report</title>
     <style>
         html, body {
             height: 100%;
@@ -13,56 +13,40 @@
         #map {
             height: 100%;
         }
-        #floating-panel {
-            position: absolute;
-            top: 10px;
-            left: 25%;
-            z-index: 5;
-            background-color: #fff;
-            padding: 5px;
-            border: 1px solid #999;
-            text-align: center;
-            font-family: 'Roboto','sans-serif';
-            line-height: 30px;
-            padding-left: 10px;
-        }
-
     </style>
     <style>
-        #floating-panel {
-            position: absolute;
-            top: 5px;
-            left: 50%;
-            margin-left: -180px;
-            width: 350px;
-            z-index: 5;
-            background-color: #fff;
-            padding: 5px;
-            border: 1px solid #999;
-        }
         #latlng {
             width: 225px;
         }
     </style>
 </head>
 <body>
-<div id="floating-panel">
-    <input id="latlng" type="text" value="40.714224,-73.961452">
-    <input id="submit" type="button" value="Reverse Geocode">
-</div>
 <div id="map"></div>
 <script>
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 20,
-            center: {lat: 40.731, lng: -73.997}
+            zoom: 18,
+            center: {lat: 19.4133666, lng: -99.16594529999998}
+
         });
+        var mylatlong = {lat : 19.4133666, lng : -99.16594529999998}
         var geocoder = new google.maps.Geocoder;
         var infowindow = new google.maps.InfoWindow;
 
+        var marker = new google.maps.Marker({
+            position: mylatlong,
+            map: map,
+            title: 'event',
+        })
+
+
         document.getElementById('submit').addEventListener('click', function() {
             geocodeLatLng(geocoder, map, infowindow);
+
+
         });
+
+
     }
 
     function geocodeLatLng(geocoder, map, infowindow) {
