@@ -5,8 +5,32 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /bower_components
-  static_dir: bower_components
+- url: /css
+  static_dir: css
+  secure: always
+
+- url: /css
+  static_dir: css
+  secure: always
+
+- url: /font
+  static_dir: font
+  secure: always
+
+- url: /fonts
+  static_dir: fonts
+  secure: always
+
+- url: /img
+  static_dir: img
+  secure: always
+
+- url: /js
+  static_dir: js
+  secure: always
+
+- url: /styles
+  static_dir: styles
   secure: always
 
 - url: /.*
