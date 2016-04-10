@@ -18,8 +18,6 @@ class EventsHandler(BaseHandler):
         self.render_template('events.html')
 
 
-
-
 app = webapp2.WSGIApplication([
     webapp2.Route(r'/',
                   handler=LandingHandler,
