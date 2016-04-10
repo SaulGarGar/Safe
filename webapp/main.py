@@ -12,7 +12,7 @@ class BaseHandler(webapp2.RequestHandler):
 
 class LandingHandler(BaseHandler):
     def get(self):
-        self.render_template('landing.html')
+        self.render_template('/landing/index.html')
 
 
 class EventsHandler(BaseHandler):
