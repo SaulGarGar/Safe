@@ -13,6 +13,11 @@ class LandingHandler(BaseHandler):
     def get(self):
         self.render_template('landing.html')
 
+class EventsHandler(BaseHandler):
+    def get(self):
+        self.render_template('events.html')
+
+
 
 
 app = webapp2.WSGIApplication([
@@ -21,4 +26,11 @@ app = webapp2.WSGIApplication([
                   name='landing_handler',
                   methods=['GET']),
 
-], debug=True)
+    webapp2.Route(r'/events',
+                  handler=EventsHandler,
+                  name='events_handler',
+                  methods=['GET']),
+
+
+
+    ], debug=True)
